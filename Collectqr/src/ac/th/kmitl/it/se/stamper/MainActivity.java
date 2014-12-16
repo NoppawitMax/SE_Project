@@ -38,14 +38,18 @@ public class MainActivity extends Activity {
 
 	// Some items to add to the GRID
 	private static final String[] CONTENT_Header = new String[] {
-			"Tap to Scan", "Ducati","FarmDesign",
+			"Tap to Scan", "Ducati" };
+	private static final String[] CONTENT_Shop = new String[] { "FarmDesign",
 			"Hermes", "KFC", "MC Donald", "Pronto", "Shell", "Sizzler", "SP",
-			"Starbucks", "Yayoi"  };
+			"Starbucks", "Yayoi" };
 	private static final int[] ICONS_Header = new int[] {
-			R.drawable.camera_icon, R.drawable.logo_ducati ,R.drawable.logo_farmdesign, R.drawable.logo_hermes,
+			R.drawable.camera_icon, R.drawable.logo_ducati };
+	private static final int[] ICONS_Shop = new int[] {
+			R.drawable.logo_farmdesign, R.drawable.logo_hermes,
 			R.drawable.logo_kfc, R.drawable.logo_mc, R.drawable.logo_pronto,
 			R.drawable.logo_shell, R.drawable.logo_sizzler, R.drawable.logo_sp,
-			R.drawable.logo_starbucks, R.drawable.logo_yayoi};
+			R.drawable.logo_starbucks, R.drawable.logo_yayoi };
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -64,17 +68,12 @@ public class MainActivity extends Activity {
 
 		// set image adapter to the GridView
 		// photoGrid.setAdapter(imageAdapter);
-		//Header
-		SwingLeftInAnimationAdapter headerAdapter = new SwingLeftInAnimationAdapter(
+		SwingLeftInAnimationAdapter swingBottomInAdapter = new SwingLeftInAnimationAdapter(
 				imageAdapter);
-		headerAdapter.setAbsListView(HeaderGrid);
-		HeaderGrid.setAdapter(headerAdapter);
-//		//Shop
-//		SwingLeftInAnimationAdapter shopAdapter = new SwingLeftInAnimationAdapter(
-//				imageAdapter);
-//		shopAdapter.setAbsListView(ShopGrid);
-//		ShopGrid.setAdapter(shopAdapter);
-		
+		swingBottomInAdapter.setAbsListView(HeaderGrid);
+
+		HeaderGrid.setAdapter(swingBottomInAdapter);
+
 		// get the view tree observer of the grid and set the height and numcols
 		// dynamically
 		HeaderGrid.getViewTreeObserver().addOnGlobalLayoutListener(
@@ -94,24 +93,6 @@ public class MainActivity extends Activity {
 						}
 					}
 				});
-//		ShopGrid.getViewTreeObserver().addOnGlobalLayoutListener(
-//				new ViewTreeObserver.OnGlobalLayoutListener() {
-//					@Override
-//					public void onGlobalLayout() {
-//						if (imageAdapter.getNumColumns() == 0) {
-//							final int numColumns = (int) Math.floor(ShopGrid
-//									.getWidth() / (mPhotoSize + mPhotoSpacing));
-//							if (numColumns > 0) {
-//								final int columnWidth = (ShopGrid.getWidth() / numColumns)
-//										- mPhotoSpacing;
-//								imageAdapter.setNumColumns(numColumns);
-//								imageAdapter.setItemHeight(columnWidth);
-//
-//							}
-//						}
-//					}
-//				});
-		
 
 		// Click to Scan QR CODE
 		HeaderGrid.setOnItemClickListener(new OnItemClickListener() {

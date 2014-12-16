@@ -4,18 +4,44 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <GridView
-        android:id="@+id/HeaderGrid"
-        style="@style/PhotoGrid"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@color/black"
-        android:columnWidth="@dimen/photo_size"
-        android:horizontalSpacing="@dimen/photo_spacing"
-        android:numColumns="auto_fit"
-        android:padding="4dp"
-        android:scrollbars="none"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="@dimen/photo_spacing" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <GridView
+            android:id="@+id/HeaderGrid"
+            style="@style/PhotoGrid"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/black"
+            android:columnWidth="@dimen/photo_size"
+            android:horizontalSpacing="@dimen/photo_spacing"
+            android:numColumns="auto_fit"
+            android:padding="4dp"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="@dimen/photo_spacing" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <GridView
+            android:id="@+id/ShopGrid"
+            style="@style/PhotoGrid"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/black"
+            android:columnWidth="@dimen/photo_size"
+            android:horizontalSpacing="@dimen/photo_spacing"
+            android:numColumns="auto_fit"
+            android:padding="4dp"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="@dimen/photo_spacing" />
+    </LinearLayout>
 
 </LinearLayout>
